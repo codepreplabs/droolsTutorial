@@ -1,0 +1,13 @@
+package com.codeprep.app
+ 
+import com.codeprep.model.CustomerRuleObject;
+ 
+dialect "java"
+ 
+rule "CustomerRule"
+ 
+    when
+        customerRuleObject:CustomerRuleObject (getFirstName() == 'CODEPREP' )
+    then
+        customerRuleObject.setMessage('Message added from the rule');
+end
